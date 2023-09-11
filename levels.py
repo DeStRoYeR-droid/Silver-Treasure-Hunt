@@ -28,9 +28,12 @@ LEVEL_1 = Level(
     ],
     treasure_spawn_pos = [
         (6 , 10),
-        (4 , 2),
-        (6 , 5)
+        (2 , 4),
+        (6 , 6),
+        (10 , 6)
     ],
     cam_x = 256,
-    cam_y = 160
+    cam_y = 160,
+    player_x = 13,
+    player_y = 10
 )
