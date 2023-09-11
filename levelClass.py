@@ -53,7 +53,6 @@ class Level:
             if (self.bitmap[self.player_y][self.player_x - 1] == 1):
                 self.cam_x -= 32
                 self.player_x -= 1
-                print (self.player_x , self.player_y)
                 self.last_animation_time = self.current_time
                 return
             
@@ -61,7 +60,6 @@ class Level:
             if (self.bitmap[self.player_y][self.player_x + 1] == 1):
                 self.cam_x += 32
                 self.player_x += 1
-                print (self.player_x , self.player_y)
                 self.last_animation_time = self.current_time
                 return
             
@@ -69,7 +67,6 @@ class Level:
             if (self.bitmap[self.player_y - 1][self.player_x] == 1):
                 self.cam_y -= 32
                 self.player_y-= 1
-                print (self.player_x , self.player_y)
                 self.last_animation_time = self.current_time
                 return
 
@@ -77,6 +74,5 @@ class Level:
             if (self.bitmap[self.player_y + 1][self.player_x] == 1):
                 self.cam_y += 32
                 self.player_y += 1
-                print (self.player_x , self.player_y)
                 self.last_animation_time = self.current_time
                 return

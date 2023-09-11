@@ -29,7 +29,7 @@ class Player:
         pg.image.load("./assets/player_sprites/left_moving_2.png")
     ]
 
-    ANIMATION_DELAY = 150
+    ANIMATION_DELAY = 75
     def __init__(self, px, py : int, dir : str, window : pg.display) -> None:
         """
         
