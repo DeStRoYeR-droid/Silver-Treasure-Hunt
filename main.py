@@ -10,12 +10,15 @@ CUR_LEVEL = 0 # Indexing
 
 # Initialising the module
 pg.init()
+pg.mixer.init()
 
 BOARD = pg.display.set_mode((WIN_HEIGHT, WIN_WIDTH))
 PLAYER = Player(WIN_WIDTH // 2 + 16, WIN_HEIGHT // 2  , "d" , BOARD)
 CLOCK = pg.time.Clock()
 CUR_LEVEL = LEVEL_1
 CUR_LEVEL.make_treasure_spawn(4)
+
+pg.display.set_caption("Silver Treasure Hunt")
 
 # Main game loop
 def main():

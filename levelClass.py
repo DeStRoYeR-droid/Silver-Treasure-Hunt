@@ -1,10 +1,14 @@
 import pygame as pg
+from pygame import mixer
 from copy import deepcopy
 from random import randint
 from settings import *
 
+mixer.init()
+
 class Level:
     TREASURE = pg.transform.scale2x(pg.image.load("./assets/level_sprites/treasure.png"))
+    TREASURE_COLLECTED_SOUND = mixer.Sound("./assets/sounds/treasure_collected.mp3")
 
     def __init__(self , img_path : str , width : int, height : int, bitmap : list , treasure_spawn_pos : list, cam_x : int , cam_y : int, player_x : int , player_y : int) -> None:
         self.sprite = pg.image.load(img_path)
@@ -87,5 +91,6 @@ class Level:
                 self.last_animation_time = self.current_time
 
         if ((self.player_x , self.player_y) in self.treasures):
-            self.mask_radius += 32
+            self.mask_radius += 16
             self.treasures.pop(self.treasures.index((self.player_x , self.player_y)))
+            self.TREASURE_COLLECTED_SOUND.play()
